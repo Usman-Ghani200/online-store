@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #141310;
+  --gold: #e8a400;
+  --gold-deep: #c98e00;
+  --cream: #fbf8f1;
+  --charcoal: #4a463e;
+  --clay: #c4573d;
+  --line: #e7e1d3;
+}
+
+@theme {
+  --font-display: "Fraunces", serif;
+  --font-body: "Work Sans", sans-serif;
+  --color-ink: #141310;
+  --color-gold: #e8a400;
+  --color-gold-deep: #c98e00;
+  --color-cream: #fbf8f1;
+  --color-charcoal: #4a463e;
+  --color-clay: #c4573d;
+  --color-line: #e7e1d3;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--charcoal);
+  font-family: "Work Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: "Fraunces", serif;
+}
+
+::selection {
+  background-color: var(--gold);
+  color: var(--ink);
+}
+
+/* accessible focus ring, kept everywhere */
+:focus-visible {
+  outline: 2px solid var(--gold-deep);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.marquee-track {
+  animation: marquee 22s linear infinite;
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
